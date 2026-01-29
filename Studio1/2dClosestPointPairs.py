@@ -1,4 +1,4 @@
-import math
+import math, webbrowser
 
 def calcDistance(points1, points2):
     return math.sqrt(math.pow((points1[0] - points2[0]),2) + math.pow((points1[1] - points2[1]),2))
@@ -18,6 +18,7 @@ if __name__ == "__main__":
     
     points_list = []
     length = int(input("How many point pairs do you want in your list? "))
+    url = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
 
     for i in range(length):
         point1 = float(input("Enter point 1: "))
@@ -29,4 +30,5 @@ if __name__ == "__main__":
 
     min = getMinDistance(points_list)
     print(f"Minimum distance is: {min:.3f}")
+    webbrowser.open_new_tab(url)
 
