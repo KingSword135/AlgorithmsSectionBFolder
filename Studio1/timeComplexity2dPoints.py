@@ -1,6 +1,6 @@
 import numpy as np, matplotlib.pyplot as plt
 import ClosestPointPairs
-import random, time
+import random, time, webbrowser
 
 def fillRandom(point_array):
     for i in range(0, i):
@@ -34,3 +34,5 @@ plt.ylabel("Time Required (seconds)")
 plt.legend()
 plt.grid(False)
 plt.show()
+url = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+webbrowser.open_new_tab(url)
