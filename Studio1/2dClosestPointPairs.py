@@ -6,13 +6,15 @@ def calcDistance(points1, points2):
 def getMinDistance(points_list):
 
     length = len(points_list)
-    minimumDistance = 9999
+    closestDistance = 9999
+    closestPairs = None
     for i in range(length):
         for j in range(i + 1, length):
-            if (calcDistance(points_list[i],points_list[j]) < minimumDistance):
-                minimumDistance = calcDistance(points_list[i],points_list[j])
+            if (calcDistance(points_list[i],points_list[j]) < closestDistance):
+                closestDistance = calcDistance(points_list[i],points_list[j])
+                closestPairs = (points_list[i],points_list[j])
     
-    return minimumDistance
+    return closestDistance, closestPairs
 
 if __name__ == "__main__":
     
@@ -27,6 +29,6 @@ if __name__ == "__main__":
         sub_array.append(point2)
         points_list.append(sub_array)
 
-    min = getMinDistance(points_list)
-    print(f"Minimum distance is: {min:.3f}")
+    minDist, minPoints = getMinDistance(points_list)
+    print(f"Minimum distance is: {minDist:.3f}, closest points are {minPoints}")
 
